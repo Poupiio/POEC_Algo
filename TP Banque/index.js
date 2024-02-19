@@ -1,3 +1,5 @@
+const choice = document.querySelector('.choice');
+const overdraftChoice = document.getElementById('choice');
 const overdraftContainer = document.querySelector('.overdraft-container');
 const amountContainer = document.querySelector('.amount-container');
 const overdraft = document.getElementById('overdraft');
@@ -13,10 +15,14 @@ let isOverdraft = false;
 document.body.addEventListener('keydown', (e) => {
     if (e.key == "y") {
         isOverdraft = true;
+        choice.style.display = "block";
+        overdraftChoice.textContent = "Oui";
         overdraftContainer.style.display = "block";
         amountContainer.style.display = "block";
         recap.style.display = "block";
     } else {
+        choice.style.display = "block";
+        overdraftChoice.textContent = "Non";
         amountContainer.style.display = "block";
         recap.style.display = "block";
         allowedOverdraft.textContent = "0";

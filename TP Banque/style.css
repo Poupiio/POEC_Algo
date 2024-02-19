@@ -42,7 +42,7 @@ body {
     width: 60px;
 }
 
-.overdraft-container, #overdraft-alert, .amount-container, #amount-alert, .recap-container {
+.choice, .overdraft-container, #overdraft-alert, .amount-container, #amount-alert, .recap-container {
     display: none;
 }
 
