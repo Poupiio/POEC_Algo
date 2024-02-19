@@ -13,7 +13,7 @@ Utilisez la fonction console.log */
 // displayData(ask);
 
 
-/* EXERCICE 1
+/* EXERCICE 2
 Demandez à l'utilisateur de saisir 2 nombres entiers.
 Affichez le résultat de l'addition de ces 2 nombres.
 Affichez le résultat de la soustraction de ces 2 nombres.
@@ -33,7 +33,7 @@ Uniquement pour ce dernier point (numéro 5), lorsque le dénominateur (deuxièm
 //     const multiplication = a - b;
 //     const division = b === 0 ? "Division par 0 impossible" : a / b;
 
-//     return {  add, substract, multiplication, division} ;
+//     return { add, substract, multiplication, division } ;
 // }
 
 // let results = displayNumbers(num1, num2);
@@ -53,6 +53,7 @@ En fonction de l'âge saisit par l'utilisateur, affichez l'un des 3 messages sui
 
 // let ask = prompt("Saisissez votre nom, prénom et votre âge");
 // let ageInput = ask.split(" ");
+// Je récupère le dernier élément enregistré (= âge)
 // let age = ageInput[ageInput.length - 1];
 
 // const displayData = (data) => {
@@ -140,34 +141,66 @@ Une fonction pour l'affichage des notes
 => Structure itérative while
 => Structure itérative do while */
 
-let ask = prompt("Saisissez plusieurs notes");
-let numbArray = ask.split(" ");
-parseInt(numbArray);
-console.log("numbArray :" + numbArray);
+let notesArray = [];
 
-numbArray.forEach((num) => {
-    num = parseInt(num);
-    console.log("num parsé : " + num);
-});
+function notes() {
+    let note1 = parseInt(prompt("Saisir une note"));
+    let note2 = parseInt(prompt("Saisir une note"));
+    let note3 = parseInt(prompt("Saisir une note"));
+    let note4 = parseInt(prompt("Saisir une note"));
 
-let sum = 0;
-let counter = 0;
+    notesArray.push(note1, note2, note3, note4);
 
-for (let i = 0; i < numbArray.length; i++) {
-    console.log(numbArray[i]);
+    // for (let i = 0; i < notesArray.length; i++) {
+    //     if (notesArray[i] == -1) {
+    //         console.log(notesArray[i]);
+    //         return;
+    //     }
+    // }
 
-    if (numbArray[i] == -1) {
-        // On arrête la saisie
-        break;
-    } else {
-        sum += Number(numbArray[i]);
-        counter++;
-        console.log("test");
-
-    }
+    notesArray.map((note) => {
+        if (note == -1) {
+            console.log("ça va pas");
+            return null;
+        }
+    })
 }
-console.log("Nombre total de notes : " + counter);
-let avg = sum / counter;
 
-console.log("Somme des nombres " + sum);
-console.log("Moyenne des notes : " + avg);
+notes()
+console.log(notesArray);
+
+
+// function marksInput() {
+//     let ask = prompt("Saisissez plusieurs notes");
+//     let numbArray = ask.split(" ");
+//     parseInt(numbArray);
+//     console.log("numbArray :" + numbArray);
+    
+//     numbArray.forEach((num) => {
+//         num = parseInt(num);
+//         console.log("num parsé : " + num);
+//     });
+//     numbArray = numbArray.filter((num) => {
+//         return num !== -1;
+//     });
+    
+//     return numbArray;
+// }
+
+// function calculateAvg(numbArray) {
+//     let sum = 0;
+//     let counter = 0;
+    
+//     for (let i = 0; i < numbArray.length; i++) {
+//         sum += Number(numbArray[i]);
+//         counter++;
+//     }
+    
+//     return sum / counter;
+// }
+
+// let notes = marksInput();
+// let moyenne = calculateAvg(notes);
+
+// console.log("Nombre total de notes : " + notes.length);
+// console.log("Moyenne des notes : " + moyenne);
