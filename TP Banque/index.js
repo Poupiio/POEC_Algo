@@ -16,6 +16,10 @@ document.body.addEventListener('keydown', (e) => {
         overdraftContainer.style.display = "block";
         amountContainer.style.display = "block";
         recap.style.display = "block";
+    } else {
+        amountContainer.style.display = "block";
+        recap.style.display = "block";
+        allowedOverdraft.textContent = "0";
     }
 });
 
