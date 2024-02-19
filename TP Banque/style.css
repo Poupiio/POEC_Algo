@@ -28,7 +28,7 @@ body {
     margin-bottom: 10px;
 }
 
-.container span {
+.container span#y {
     font-weight: bold;
     border: solid 2px rgba(0, 0, 0, 0.8);
     background: rgb(102,153,204);
@@ -42,7 +42,10 @@ body {
     width: 60px;
 }
 
-.container #overdraft-alert, .container #amount-alert {
-    color: red;
+.overdraft-container, #overdraft-alert, .amount-container, #amount-alert, .recap-container {
     display: none;
+}
+
+#overdraft-alert, #amount-alert {
+    color: red;
 }
