@@ -106,7 +106,7 @@ Affichez à l'utilisateur le "Votre nombre est [nombre saisi]" uniquement lorsqu
 
 // Do... while
 // do {
-//     number = prompt("Saisissez un nombre entre 0 et 10");
+//     number = parseInt(prompt("Saisissez un nombre entre 0 et 10"));
 // } while (number >= 0 && number <= 10);
 
 // console.log("Votre nombre est " + number);
@@ -115,4 +115,47 @@ Affichez à l'utilisateur le "Votre nombre est [nombre saisi]" uniquement lorsqu
 Demandez à l'utilisateur de saisir un nombre inférieur à 100.
 Forcez l'utilisateur à saisir un nombre inférieur à 100.
 Affichez tous les nombres à partir du nombre saisi jusqu'à 100. 
-=> Structure itérative for*/
+=> Structure itérative for */
+
+// let number = prompt("Saisissez un nombre inférieur à 100");
+
+// if (number > 101) {
+//     console.log("On a dit INFÉRIEUR à 100");
+// } else {
+//     for (let i = number; i <= 100; i++) {
+//         console.log(i);
+//     }
+// }
+
+/* EXERCICE 7
+L'utilisateur saisit plusieurs notes, lorsqu'il saisit -1 la saisie des notes s'arrête.
+Ensuite, il faut calculer la moyenne des notes qu'il a saisies.
+Enfin, il faut afficher le nombre total des notes (nombre d'étudiants).
+
+Ecrivez le programme qui répond aux exigences ci-dessus en séparant les responsabilités dans des fonctions distinctes :
+Une fonction pour la saisit des notes
+Une fonction pour le calcul de la moyenne
+Une fonction pour l'affichage des notes
+=> Structure itérative for
+=> Structure itérative while
+=> Structure itérative do while */
+
+let ask = prompt("Saisissez plusieurs notes");
+let numbArray = ask.split(" ");
+parseInt(numbArray);
+console.log("numbArray :" + numbArray);
+
+numbArray.forEach((num) => {
+    num = parseInt(num);
+    console.log("num parsé : " + num);
+});
+
+for (let i = 0; i < numbArray.length; i++) {
+    console.log(numbArray[i]);
+
+    if (numbArray[i] == -1) {
+        console.log("ça va pas");
+        break;
+    }
+    console.log("test");
+}
