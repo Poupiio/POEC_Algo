@@ -150,12 +150,24 @@ numbArray.forEach((num) => {
     console.log("num parsé : " + num);
 });
 
+let sum = 0;
+let counter = 0;
+
 for (let i = 0; i < numbArray.length; i++) {
     console.log(numbArray[i]);
 
     if (numbArray[i] == -1) {
-        console.log("ça va pas");
+        // On arrête la saisie
         break;
+    } else {
+        sum += Number(numbArray[i]);
+        counter++;
+        console.log("test");
+
     }
-    console.log("test");
 }
+console.log("Nombre total de notes : " + counter);
+let avg = sum / counter;
+
+console.log("Somme des nombres " + sum);
+console.log("Moyenne des notes : " + avg);
