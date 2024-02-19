@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: monospace;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 30px;
+    width: 40%;
+    border: solid 4px rgb(102,153,204);
+    border-radius: 20px;
+    font-size: 1rem;
+    line-height: 30px;
+}
+
+.container span {
+    font-weight: bold;
+    border: solid 2px rgba(0, 0, 0, 0.8);
+    background: rgb(102,153,204);
+    padding: 3px;
+}

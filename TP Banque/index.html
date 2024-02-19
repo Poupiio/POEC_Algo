@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTM Bank</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <p>Bienvenue chez GTM Bank</p>
+        <p>Voulez-vous avoir un découvert ?</p>
+        <p>Si oui, appuyez sur la touche <span>Y</span>, sinon appuyez sur une autre touche</p>
+
+        <div class="overdraft-container">
+            <label for="overdraft">Saisissez le montant du découvert entre 100€ et 2000€</label>
+            <input type="number" name="overdraft" id="overdraft" min="100" max="2000" placeholder="100" required>
+        </div>
+
+        <div class="amount-container">
+            <label for="amount">Saisissez le montant de dépôt (minimum 500€)</label>
+            <input type="number" name="amount" id="amount" min="500" placeholder="500" required>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
