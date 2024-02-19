@@ -9,16 +9,16 @@ Senior (au-dessus de 50 ans) */
 
 const determineAge = (age) => {
     if (age <= 10) {
-        return "Enfant";
+        console.log("Enfant");
     } else if (age >= 11 && age <= 17) {
-        return "Adolescent";
+        console.log("Adolescent");
     } else if (age >= 18 && age <= 49) {
-        return "Majeur";
+        console.log("Majeur");
     } else {
-        return "Senior";
+        console.log("Senior");
     }
 }
-determineAge(15);
+determineAge(99);
 
 
 // ------------------------------------------------------------------------------------ //
@@ -53,3 +53,9 @@ Spécifications techniques
 Prix hors taxes et taux de la tva en entrée (paramètres de votre fonction)
 La fonction retourne le prix TTC */
 
+let prix_HT;
+let tva = 0.2;
+
+function calculTVA(ht, tva) {
+    
+}

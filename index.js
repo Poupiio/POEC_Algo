@@ -141,66 +141,36 @@ Une fonction pour l'affichage des notes
 => Structure itérative while
 => Structure itérative do while */
 
-let notesArray = [];
+function marksInput() {
+    let ask = prompt("Saisissez plusieurs notes");
+    let numbArray = ask.split(" ");
+    let numbers = [];
 
-function notes() {
-    let note1 = parseInt(prompt("Saisir une note"));
-    let note2 = parseInt(prompt("Saisir une note"));
-    let note3 = parseInt(prompt("Saisir une note"));
-    let note4 = parseInt(prompt("Saisir une note"));
-
-    notesArray.push(note1, note2, note3, note4);
-
-    // for (let i = 0; i < notesArray.length; i++) {
-    //     if (notesArray[i] == -1) {
-    //         console.log(notesArray[i]);
-    //         return;
-    //     }
-    // }
-
-    notesArray.map((note) => {
-        if (note == -1) {
-            console.log("ça va pas");
-            return null;
+    for (let i = 0; i < numbArray.length; i++) {
+        if (numbArray[i] != "-1") {
+            numbers.push(parseInt(numbArray[i]));
+        } else {
+            break;
         }
-    })
+    }
+
+    return numbers;
 }
 
-notes()
-console.log(notesArray);
-
-
-// function marksInput() {
-//     let ask = prompt("Saisissez plusieurs notes");
-//     let numbArray = ask.split(" ");
-//     parseInt(numbArray);
-//     console.log("numbArray :" + numbArray);
+function calculateAvg(numbArray) {
+    let sum = 0;
+    let counter = 0;
     
-//     numbArray.forEach((num) => {
-//         num = parseInt(num);
-//         console.log("num parsé : " + num);
-//     });
-//     numbArray = numbArray.filter((num) => {
-//         return num !== -1;
-//     });
+    for (let i = 0; i < numbArray.length; i++) {
+        sum += Number(numbArray[i]);
+        counter++;
+    }
     
-//     return numbArray;
-// }
+    return sum / counter;
+}
 
-// function calculateAvg(numbArray) {
-//     let sum = 0;
-//     let counter = 0;
-    
-//     for (let i = 0; i < numbArray.length; i++) {
-//         sum += Number(numbArray[i]);
-//         counter++;
-//     }
-    
-//     return sum / counter;
-// }
+let notes = marksInput();
+let moyenne = calculateAvg(notes);
 
-// let notes = marksInput();
-// let moyenne = calculateAvg(notes);
-
-// console.log("Nombre total de notes : " + notes.length);
-// console.log("Moyenne des notes : " + moyenne);
+console.log("Nombre total de notes : " + notes.length);
+console.log("Moyenne des notes : " + moyenne);
