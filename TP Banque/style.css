@@ -23,9 +23,26 @@ body {
     line-height: 30px;
 }
 
+.container p#title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
 .container span {
     font-weight: bold;
     border: solid 2px rgba(0, 0, 0, 0.8);
     background: rgb(102,153,204);
+    padding: 4px;
+}
+
+.container input {
     padding: 3px;
+    border: solid 1px rgb(102,153,204);
+    border-radius: 5px;
+    width: 60px;
+}
+
+.container #overdraft-alert, .container #amount-alert {
+    color: red;
+    display: none;
 }
