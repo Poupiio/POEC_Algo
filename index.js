@@ -141,36 +141,95 @@ Une fonction pour l'affichage des notes
 => Structure itérative while
 => Structure itérative do while */
 
-function marksInput() {
-    let ask = prompt("Saisissez plusieurs notes");
-    let numbArray = ask.split(" ");
-    let numbers = [];
+// function marksInput() {
+//     let ask = prompt("Saisissez plusieurs notes");
+//     let numbArray = ask.split(" ");
+//     let numbers = [];
 
-    for (let i = 0; i < numbArray.length; i++) {
-        if (numbArray[i] != "-1") {
-            numbers.push(parseInt(numbArray[i]));
-        } else {
-            break;
-        }
-    }
+//     for (let i = 0; i < numbArray.length; i++) {
+//         if (numbArray[i] != "-1") {
+//             numbers.push(parseInt(numbArray[i]));
+//         } else {
+//             break;
+//         }
+//     }
 
-    return numbers;
-}
+//     return numbers;
+// }
 
-function calculateAvg(numbArray) {
+// function calculateAvg(numbArray) {
+//     let sum = 0;
+//     let counter = 0;
+    
+//     for (let i = 0; i < numbArray.length; i++) {
+//         sum += Number(numbArray[i]);
+//         counter++;
+//     }
+    
+//     return sum / counter;
+// }
+
+// let notes = marksInput();
+// let moyenne = calculateAvg(notes);
+
+// console.log("Nombre total de notes : " + notes.length);
+// console.log("Moyenne des notes : " + moyenne);
+
+
+/* EXERCICE 8 
+Copiez/collez votre code de l'exercice 7 et partez sur cette base.
+Désormais, chaque élève saisit 5 notes pour les matières Maths, Français, Anglais, Physique et Chimie.
+Calculez et affichez la moyenne de chaque élève.
+Calculez et affichez la moyenne de la classe par matière. */
+
+const noteMaths = [];
+const noteFrancais = [];
+const noteAnglais = [];
+const notePhysique = [];
+const noteChimie = [];
+
+function unEleve () {
+    let notes = [];
+
+    const maths = parseInt(prompt("Maths :"));
+    const francais = parseInt(prompt("Français :"));
+    const anglais = parseInt(prompt("Anglais :"));
+    const physique = parseInt(prompt("Physique :"));
+    const chimie = parseInt(prompt("Chimie :"));
+
+    // Stockage des 5 notes pour 1 élève
+    notes.push(maths, francais, anglais, physique, chimie);
+
+    // Stockage de ses notes par matière
+    noteFrancais.push(francais);
+    noteAnglais.push(anglais);
+    noteMaths.push(maths);
+    notePhysique.push(physique);
+    noteChimie.push(chimie);
+
+    return notes;
+};
+
+function calculMoyenne () {
     let sum = 0;
     let counter = 0;
     
-    for (let i = 0; i < numbArray.length; i++) {
-        sum += Number(numbArray[i]);
+    for (let i = 0; i < notes.length; i++) {
+        sum += notes[i];
         counter++;
     }
     
+    console.log("Moyenne " + sum / counter);
     return sum / counter;
 }
 
-let notes = marksInput();
-let moyenne = calculateAvg(notes);
 
-console.log("Nombre total de notes : " + notes.length);
-console.log("Moyenne des notes : " + moyenne);
+// Récupération des notes pour 3 élèves
+for (let i = 0; i < 3; i++) {
+    unEleve();
+}
+let notesFinales = unEleve();
+let moyenne = calculMoyenne(notesFinales);
+
+console.log(`Les notes de tous les élèves pour les maths sont : ${noteMaths}`);
+
